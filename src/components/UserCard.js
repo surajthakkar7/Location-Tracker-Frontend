@@ -8,9 +8,8 @@ const UserCard = ({ userData , onDeleteUser}) => {
   const handleDeleteUser = async (userId) => {
     try {
       await axios.delete(`http://localhost:5000/api/users/${userId}`);
-      console.log("User deleted successfully.");
-       // Call the onDeleteUser callback to update the user list
-       onDeleteUser(userId);
+      window.alert("User deleted successfully.");
+      onDeleteUser(userId);
     } catch (error) {
       console.error("Error deleting user:", error);
     }
